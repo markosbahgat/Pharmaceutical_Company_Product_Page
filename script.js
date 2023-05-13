@@ -20,6 +20,8 @@ const toggleSideBar = () => {
 		target.classList.add('hidden');
 	}
 };
+
+// Handle Form Submit
 const handleSubmit = () => {
 	const email = document.getElementById('email').value;
 	const password = document.getElementById('password').value;
@@ -28,6 +30,11 @@ const handleSubmit = () => {
 	}
 	localStorage.setItem('token', email);
 	window.location.replace('/index.html');
+};
+
+const handleSignOut = () => {
+	localStorage.clear();
+	window.location.replace('/login.html');
 };
 document.getElementById('navbar_desktop').innerHTML = `
 <div class="flex h-24 shrink-0 items-center">
