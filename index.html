@@ -3,11 +3,12 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="description" content="Landing Page" />
+		<meta name="description" content="Pharmaceutical Company Product Page" />
 		<meta name="keywords" content="HTML, CSS, JavaScript" />
 		<meta name="author" content="Markos Bahgat =>  https://markosbahgat.com" />
 		<meta name="developer" content="Markos Bahgat => https://markosbahgat.com" />
 		<link rel="icon" href="./assets/logo.png" />
+
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link
 			rel="stylesheet"
@@ -21,22 +22,19 @@
 		<script>
 			tailwind.config = {
 				theme: {
-					extend: {
-						colors: {
-							clifford: '#da373d'
-						}
-					}
+					extend: {}
 				}
 			};
+			if (!localStorage.getItem('token')) {
+				window.location.replace('/login.html');
+			}
 		</script>
-
 		<title>Devartlab</title>
 	</head>
-	<body class="m-0 p-0 w-full overflow-hidden h-screen">
-		<!-- ========================= Glass Background ============================== -->
+	<body>
 		<main>
+			<!-- ============ Main Screen Content ============= -->
 			<div>
-				<!-- Off-canvas menu for mobile, show/hide based on off-canvas menu state. -->
 				<div class="relative z-50 lg:hidden" role="dialog" aria-modal="true">
 					<div id="sidebar" class="fixed inset-0 hidden">
 						<div class="relative mr-16 flex w-full max-w-11/12 sm:max-w-xs flex-1">
@@ -48,247 +46,18 @@
 								</button>
 							</div>
 
-							<!-- Sidebar component, swap this element with another sidebar if you like -->
-							<div class="flex grow flex-col gap-y-5 overflow-y-auto bg-[#2376BB] px-6 pb-4">
-								<div class="flex h-16 shrink-0 items-center">
-									<img class="h-14 w-auto" src="/assets/logo.png" alt="Your Company" />
-								</div>
-
-								<nav class="flex flex-1 flex-col">
-									<ul role="list" class="flex flex-1 flex-col gap-y-7">
-										<li>
-											<ul role="list" class="-mx-2 space-y-1">
-												<li>
-													<a
-														href="#"
-														class="text-white hover:text-[#2376BB] hover:bg-white group flex gap-x-3 rounded-md p-2 text-sm leading-6 items-center"
-													>
-														<svg
-															class="h-6 w-6 shrink-0 text-white group-hover:text-[#2376BB]"
-															fill="none"
-															viewBox="0 0 24 24"
-															stroke-width="1.5"
-															stroke="currentColor"
-															aria-hidden="true"
-														>
-															<path
-																stroke-linecap="round"
-																stroke-linejoin="round"
-																d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
-															/>
-														</svg>
-														Dashboard
-													</a>
-												</li>
-												<li>
-													<a
-														href="#"
-														class="text-white hover:text-[#2376BB] hover:bg-white group flex gap-x-3 rounded-md p-2 text-sm leading-6 items-center"
-													>
-														<i class="fa-solid fa-cart-shopping fa-lg"></i>
-														Shipments
-													</a>
-												</li>
-												<li>
-													<a
-														href="#"
-														class="bg-white text-[#2376BB] group flex gap-x-3 rounded-md p-2 text-sm leading-6 items-center"
-													>
-														<i class="fa-solid fa-cube fa-lg"></i>
-														Products
-													</a>
-												</li>
-												<li>
-													<a
-														href="#"
-														class="text-white hover:text-[#2376BB] hover:bg-white group flex gap-x-3 rounded-md p-2 text-sm leading-6 items-center"
-													>
-														<i class="fa-solid fa-bullhorn fa-lg"></i>
-														Marketing
-													</a>
-												</li>
-												<li>
-													<a
-														href="#"
-														class="text-white hover:text-[#2376BB] hover:bg-white group flex gap-x-3 rounded-md p-2 text-sm leading-6 items-center"
-													>
-														<i class="fa-solid fa-wallet fa-lg"></i>
-														Wallet
-													</a>
-												</li>
-												<li>
-													<a
-														href="#"
-														class="text-white hover:text-[#2376BB] hover:bg-white group flex gap-x-3 rounded-md p-2 text-sm leading-6 items-center"
-													>
-														<i class="fa-solid fa-chart-line fa-lg"></i>
-														Reports
-													</a>
-												</li>
-												<li>
-													<a
-														href="#"
-														class="text-white hover:text-[#2376BB] hover:bg-white group flex gap-x-3 rounded-md p-2 text-sm leading-6 items-center"
-													>
-														<i class="fa-solid fa-headset fa-lg"></i>
-														Customer
-													</a>
-												</li>
-											</ul>
-										</li>
-
-										<li class="mt-auto">
-											<a
-												href="#"
-												class="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm leading-6 text-white hover:bg-white hover:text-[#2376BB]"
-											>
-												<svg
-													class="h-6 w-6 shrink-0 text-white group-hover:text-[#2376BB]"
-													fill="none"
-													viewBox="0 0 24 24"
-													stroke-width="1.5"
-													stroke="currentColor"
-													aria-hidden="true"
-												>
-													<path
-														stroke-linecap="round"
-														stroke-linejoin="round"
-														d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z"
-													/>
-													<path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-												</svg>
-												Company Settings
-											</a>
-										</li>
-									</ul>
-								</nav>
-							</div>
+							<!-- Sidebar component for mobile and tablet -->
+							<div id="navbar_mobile" class="flex grow flex-col gap-y-5 overflow-y-auto bg-[#2376BB] px-6 pb-4"></div>
 						</div>
 					</div>
 				</div>
 
-				<!-- Static sidebar for desktop -->
+				<!-- Sidebar component for desktop -->
 				<div class="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col border-r-[1px] border-gray-300">
-					<!-- Sidebar component, swap this element with another sidebar if you like -->
-					<div class="flex grow flex-col gap-y-5 overflow-y-auto bg-gradient-to-t from-[#124D80] to-[#2376BB] px-6 pb-4">
-						<div class="flex h-24 shrink-0 items-center">
-							<img class="h-17 w-auto" src="/assets/logo.png" alt="Your Company" />
-						</div>
-						<p class="flex items-center text-sm text-white">
-							<img width="50" height="50" src="./assets/waving-hand.gif" alt="Waving Hand" />
-							Welcome, Nabil Hakeem
-						</p>
-						<nav class="flex flex-1 flex-col">
-							<ul role="list" class="flex flex-1 flex-col gap-y-7">
-								<li>
-									<ul role="list" class="-mx-2 space-y-1">
-										<li>
-											<!-- Current: "bg-white text-[#2376BB]", Default: "text-white hover:text-[#2376BB] hover:bg-white" -->
-											<a
-												href="#"
-												class="text-white hover:text-[#2376BB] hover:bg-white group flex gap-x-3 rounded-md p-2 text-sm leading-6"
-											>
-												<svg
-													class="h-6 w-6 shrink-0 text-white group-hover:text-[#2376BB]"
-													fill="none"
-													viewBox="0 0 24 24"
-													stroke-width="1.5"
-													stroke="currentColor"
-													aria-hidden="true"
-												>
-													<path
-														stroke-linecap="round"
-														stroke-linejoin="round"
-														d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
-													/>
-												</svg>
-												Dashboard
-											</a>
-										</li>
-										<li>
-											<a
-												href="#"
-												class="text-white hover:text-[#2376BB] hover:bg-white group flex gap-x-3 rounded-md p-2 text-sm leading-6 items-center"
-											>
-												<i class="fa-solid fa-cart-shopping fa-lg"></i>
-												Shipments
-											</a>
-										</li>
-										<li>
-											<!-- Current: "bg-white text-[#2376BB]", Default: "text-white hover:text-[#2376BB] hover:bg-white" -->
-											<a href="#" class="bg-white text-[#2376BB] group flex gap-x-3 rounded-md p-2 items-center text-sm leading-6">
-												<i class="fa-solid fa-cube fa-lg"></i>
-												Products
-											</a>
-										</li>
-										<li>
-											<a
-												href="#"
-												class="text-white hover:text-[#2376BB] hover:bg-white group flex gap-x-3 items-center rounded-md p-2 text-sm leading-6"
-											>
-												<i class="fa-solid fa-bullhorn fa-lg"></i>
-												Marketing
-											</a>
-										</li>
-										<li>
-											<a
-												href="#"
-												class="text-white hover:text-[#2376BB] hover:bg-white group flex gap-x-3 rounded-md p-2 text-sm leading-6 items-center"
-											>
-												<i class="fa-solid fa-wallet fa-lg"></i>
-												Wallet
-											</a>
-										</li>
-										<li>
-											<a
-												href="#"
-												class="text-white hover:text-[#2376BB] hover:bg-white group flex gap-x-3 rounded-md p-2 text-sm leading-6 items-center"
-											>
-												<i class="fa-solid fa-chart-line fa-lg"></i>
-												Reports
-											</a>
-										</li>
-										<li>
-											<a
-												href="#"
-												class="text-white hover:text-[#2376BB] hover:bg-white group flex gap-x-3 rounded-md p-2 text-sm leading-6 items-center"
-											>
-												<i class="fa-solid fa-headset fa-lg"></i>
-												Customer
-											</a>
-										</li>
-									</ul>
-								</li>
-
-								<li class="mt-auto">
-									<a
-										href="#"
-										class="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm leading-6 text-white hover:bg-white hover:text-[#2376BB]"
-									>
-										<svg
-											class="h-6 w-6 shrink-0 text-white group-hover:text-[#2376BB]"
-											fill="none"
-											viewBox="0 0 24 24"
-											stroke-width="1.5"
-											stroke="currentColor"
-											aria-hidden="true"
-										>
-											<path
-												stroke-linecap="round"
-												stroke-linejoin="round"
-												d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z"
-											/>
-											<path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-										</svg>
-										Company Settings
-									</a>
-								</li>
-							</ul>
-						</nav>
-					</div>
+					<div id="navbar_desktop" class="flex grow flex-col gap-y-5 overflow-y-auto bg-gradient-to-t from-[#124D80] to-[#2376BB] px-6 pb-4"></div>
 				</div>
 
-				<div class="lg:pl-72 h-[90px]">
+				<div class="lg:pl-72 h-[90px] fixed">
 					<div
 						class="sticky top-0 z-40 flex shrink-0 items-center gap-x-4 border-b border-gray-200 bg-[#2376BB] px-4 shadow-sm sm:gap-x-6 sm:px-6 h-[90px] lg:px-8"
 					>
@@ -302,6 +71,7 @@
 						<!-- Separator -->
 						<div class="hidden sm:flex h-6 w-px bg-white lg:hidden" aria-hidden="true"></div>
 
+						<!-- Shortcut Links -->
 						<div class="flex flex-1 gap-x-4 self-stretch lg:gap-x-6 items-center h-[90px]">
 							<div class="flex-1">
 								<ul class="hidden sm:flex flex-row items-center justify-start gap-5 text-white">
@@ -310,6 +80,8 @@
 									<li class="cursor-pointer border-b-2 border-transparent pb-8 pt-8">Stock Management</li>
 								</ul>
 							</div>
+
+							<!-- Notification and Cart -->
 							<div class="flex items-center gap-x-4 lg:gap-x-6">
 								<div class="flex items-center justify-center gap-5">
 									<button type="button" class="-m-2.5 p-2.5 text-white hover:text-gray-200 relative">
@@ -321,6 +93,7 @@
 										<i class="fa-solid fa-cart-shopping"></i>
 									</button>
 								</div>
+
 								<!-- Separator -->
 								<div class="hidden lg:block lg:h-6 lg:w-px lg:bg-gray-300" aria-hidden="true"></div>
 
@@ -362,7 +135,6 @@
 										aria-labelledby="user-menu-button"
 										tabindex="-1"
 									>
-										<!-- Active: "bg-gray-50", Not Active: "" -->
 										<a href="#" class="block px-3 py-1 text-sm leading-6 text-gray-900" role="menuitem" tabindex="-1" id="user-menu-item-0"
 											>Your profile</a
 										>
@@ -375,7 +147,7 @@
 						</div>
 					</div>
 
-					<main class="h-[calc(100vh-90px)] overflow-scroll w-full py-10 bg-slate-100">
+					<div class="h-[calc(100vh-90px)] overflow-scroll w-full py-10 bg-slate-100">
 						<div>
 							<div class="sm:px-10 px-2">
 								<div class="sm:flex sm:items-center">
@@ -419,6 +191,7 @@
 													/>
 													<path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
 												</svg>
+
 												<div class="hidden lg:block lg:h-6 lg:w-px lg:bg-gray-300" aria-hidden="true"></div>
 												<i class="fa-solid fa-download text-[#00000080] fa-lg hover:opacity-80 cursor-pointer"></i>
 
@@ -618,7 +391,7 @@
 								</div>
 							</div>
 						</div>
-					</main>
+					</div>
 				</div>
 			</div>
 

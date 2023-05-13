@@ -1,12 +1,14 @@
-// Handle Toggle Model
+// Handle Toggle User Model
 const toggleModel = () => {
 	document.getElementById('Model').classList.toggle('hidden');
 };
 
+// Toggle Filters SideOver
 const toggleSideOver = () => {
 	document.getElementById('SideOver').classList.toggle('hidden');
 };
 
+// Toggle Menu SideBar
 const toggleSideBar = () => {
 	const target = document.getElementById('sidebar');
 	console.log(target.classList.contains('hidden'));
@@ -18,14 +20,227 @@ const toggleSideBar = () => {
 		target.classList.add('hidden');
 	}
 };
+const handleSubmit = () => {
+	const email = document.getElementById('email').value;
+	const password = document.getElementById('password').value;
+	if (password.value === '') {
+		alert('Please Enter A Password');
+	}
+	localStorage.setItem('token', email);
+	window.location.replace('/index.html');
+};
+document.getElementById('navbar_desktop').innerHTML = `
+<div class="flex h-24 shrink-0 items-center">
+							<img class="h-17 w-auto" src="/assets/logo.png" alt="Your Company" />
+						</div>
+						<p class="flex items-center text-sm text-white">
+							<img width="50" height="50" src="./assets/waving-hand.gif" alt="Waving Hand" />
+							Welcome, Nabil Hakeem
+						</p>
+						<nav class="flex flex-1 flex-col">
+							<ul role="list" class="flex flex-1 flex-col gap-y-7">
+								<li>
+									<ul role="list" class="-mx-2 space-y-1">
+										<li>
+											<!-- Current: "bg-white text-[#2376BB]", Default: "text-white hover:text-[#2376BB] hover:bg-white" -->
+											<a
+												href="#"
+												class="text-white hover:text-[#2376BB] hover:bg-white group flex gap-x-3 rounded-md p-2 text-sm leading-6 items-center"
+											>
+												<i class="fa-solid fa-house-chimney fa-lg"></i>
+												Dashboard
+											</a>
+										</li>
+										<li>
+											<a
+												href="#"
+												class="text-white hover:text-[#2376BB] hover:bg-white group flex gap-x-3 rounded-md p-2 text-sm leading-6 items-center"
+											>
+												<i class="fa-solid fa-cart-shopping fa-lg"></i>
+												Shipments
+											</a>
+										</li>
+										<li>
+											<!-- Current: "bg-white text-[#2376BB]", Default: "text-white hover:text-[#2376BB] hover:bg-white" -->
+											<a href="#" class="bg-white text-[#2376BB] group flex gap-x-3 rounded-md p-2 items-center text-sm leading-6">
+												<i class="fa-solid fa-cube fa-lg"></i>
+												Products
+											</a>
+										</li>
+										<li>
+											<a
+												href="#"
+												class="text-white hover:text-[#2376BB] hover:bg-white group flex gap-x-3 items-center rounded-md p-2 text-sm leading-6"
+											>
+												<i class="fa-solid fa-bullhorn fa-lg"></i>
+												Marketing
+											</a>
+										</li>
+										<li>
+											<a
+												href="#"
+												class="text-white hover:text-[#2376BB] hover:bg-white group flex gap-x-3 rounded-md p-2 text-sm leading-6 items-center"
+											>
+												<i class="fa-solid fa-wallet fa-lg"></i>
+												Wallet
+											</a>
+										</li>
+										<li>
+											<a
+												href="#"
+												class="text-white hover:text-[#2376BB] hover:bg-white group flex gap-x-3 rounded-md p-2 text-sm leading-6 items-center"
+											>
+												<i class="fa-solid fa-chart-line fa-lg"></i>
+												Reports
+											</a>
+										</li>
+										<li>
+											<a
+												href="#"
+												class="text-white hover:text-[#2376BB] hover:bg-white group flex gap-x-3 rounded-md p-2 text-sm leading-6 items-center"
+											>
+												<i class="fa-solid fa-headset fa-lg"></i>
+												Customer
+											</a>
+										</li>
+									</ul>
+								</li>
+
+								<li class="mt-auto">
+			
+									<a
+										href="#"
+										class="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm leading-6 text-white hover:bg-white hover:text-[#2376BB] items-center"
+									>
+									<i class="fa-solid fa-gear fa-lg"></i>
+										
+										Company Settings
+									</a>
+								</li>
+							</ul>
+						</nav>
+`;
+
+document.getElementById('navbar_mobile').innerHTML = `
+<div class="flex h-16 shrink-0 items-center">
+									<img class="h-14 w-auto" src="/assets/logo.png" alt="Your Company" />
+									</div>
+									<p class="flex items-center text-sm text-white">
+							<img width="50" height="50" src="./assets/waving-hand.gif" alt="Waving Hand" />
+							Welcome, Nabil Hakeem
+						</p>
+<nav class="flex flex-1 flex-col">
+									<ul role="list" class="flex flex-1 flex-col gap-y-7">
+										<li>
+											<ul role="list" class="-mx-2 space-y-1">
+												<li>
+													<a
+														href="#"
+														class="text-white hover:text-[#2376BB] hover:bg-white group flex gap-x-3 rounded-md p-2 text-sm leading-6 items-center"
+													>
+														<i class="fa-solid fa-house-chimney fa-lg"></i>
+														Dashboard
+													</a>
+												</li>
+												<li>
+													<a
+														href="#"
+														class="text-white hover:text-[#2376BB] hover:bg-white group flex gap-x-3 rounded-md p-2 text-sm leading-6 items-center"
+													>
+														<i class="fa-solid fa-cart-shopping fa-lg"></i>
+														Shipments
+													</a>
+												</li>
+												<li>
+													<a
+														href="#"
+														class="bg-white text-[#2376BB] group flex gap-x-3 rounded-md p-2 text-sm leading-6 items-center"
+													>
+														<i class="fa-solid fa-cube fa-lg"></i>
+														Products
+													</a>
+												</li>
+												<li>
+													<a
+														href="#"
+														class="text-white hover:text-[#2376BB] hover:bg-white group flex gap-x-3 rounded-md p-2 text-sm leading-6 items-center"
+													>
+														<i class="fa-solid fa-bullhorn fa-lg"></i>
+														Marketing
+													</a>
+												</li>
+												<li>
+													<a
+														href="#"
+														class="text-white hover:text-[#2376BB] hover:bg-white group flex gap-x-3 rounded-md p-2 text-sm leading-6 items-center"
+													>
+														<i class="fa-solid fa-wallet fa-lg"></i>
+														Wallet
+													</a>
+												</li>
+												<li>
+													<a
+														href="#"
+														class="text-white hover:text-[#2376BB] hover:bg-white group flex gap-x-3 rounded-md p-2 text-sm leading-6 items-center"
+													>
+														<i class="fa-solid fa-chart-line fa-lg"></i>
+														Reports
+													</a>
+												</li>
+												<li>
+													<a
+														href="#"
+														class="text-white hover:text-[#2376BB] hover:bg-white group flex gap-x-3 rounded-md p-2 text-sm leading-6 items-center"
+													>
+														<i class="fa-solid fa-headset fa-lg"></i>
+														Customer
+													</a>
+												</li>
+											</ul>
+											<div class="sm:hidden border-t-2 pt-5 mt-5 text-xs font-semibold leading-6 text-white">Shortcuts</div>
+            <ul role="list" class="-mx-2 mt-2 space-y-1 sm:hidden">
+              <li>
+                <!-- Current: "bg-gray-800 text-white", Default: "text-gray-400 hover:text-white hover:bg-gray-800" -->
+                <a href="#" class="text-white hover:text-[#2376BB] hover:bg-white group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold">
+                  <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border border-gray-700 bg-gray-800 text-[0.625rem] font-medium text-white group-hover:text-white">H</span>
+                  <span class="truncate">Products List</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="text-white hover:text-[#2376BB] hover:bg-white group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold">
+                  <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border border-gray-700 bg-gray-800 text-[0.625rem] font-medium text-white group-hover:text-white">T</span>
+                  <span class="truncate">Bundle List</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="text-white hover:text-[#2376BB] hover:bg-white group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold">
+                  <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border border-gray-700 bg-gray-800 text-[0.625rem] font-medium text-white group-hover:text-white">W</span>
+                  <span class="truncate">Stock Management</span>
+                </a>
+              </li>
+            </ul>
+										</li>
+
+										<li class="mt-auto">
+            
+											<a
+												href="#"
+												class="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm leading-6 text-white hover:bg-white hover:text-[#2376BB] items-center"
+											>
+												<i class="fa-solid fa-gear fa-lg"></i>
+												Company Settings
+											</a>
+										</li>
+									</ul>
+								</nav>`;
 
 const tableBody = document.getElementById('table_body');
 const optionsTableBody = document.getElementById('options_table_body');
+
 [...Array(10).keys()].forEach((item) => {
 	tableBody.innerHTML =
 		tableBody.innerHTML +
-		`
-	<tr class="ring-1 ring-[#d4d4d4] rounded-[5px]">
+		`<tr class="ring-1 ring-[#d4d4d4] rounded-[5px]">
 		<td class='relative px-7 sm:w-12 sm:px-6 hidden sm:table-cell'>
 			<input type='checkbox' class='absolute left-4 top-1/2 -mt-2 h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600' />
 		</td>
